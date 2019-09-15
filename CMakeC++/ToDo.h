@@ -4,8 +4,8 @@
 class ToDo
 {
 public:
-	ToDo():
-	~ToDO();
+	ToDo();
+	~ToDo();
 };
 
 #endif // TODO_H
