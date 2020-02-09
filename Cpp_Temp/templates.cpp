@@ -14,6 +14,18 @@ public:
 	~template_try(){cout << "template_try distructoe\n";}
 };
 
+// special class template (template overload)
+template <>
+class template_try <char>
+{
+public:
+	char var;
+	void printIt(){ cout << "printing char var:" << var << endl;}
+	template_try(char temp): var(temp){cout << "template_try char constructor\n";}
+	~template_try(){cout << "template_try char distructoe\n";}
+};
+
+
 // function template type
 template <typename T>
 T foo(T type_var)
@@ -26,8 +38,11 @@ T foo(T type_var)
 int main()
 {
 	template_try<int> test1(10);
+	template_try<char> test2('a');
 	test1.printIt();
+	test2.printIt();
 	foo<int>(5);
+	foo('a');
 	cout << "Hello World\n" ;
 }
 
