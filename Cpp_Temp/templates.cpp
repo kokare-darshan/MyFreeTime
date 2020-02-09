@@ -9,10 +9,13 @@ class template_try
 {
 public:
 	T var;
-	void printIt(){ cout << "printing var:" << var << endl;}
+	void printIt();
 	template_try(T temp): var(temp){cout << "template_try constructor\n";}
 	~template_try(){cout << "template_try distructoe\n";}
 };
+
+template <typename T>
+void template_try<T>::printIt(){cout << "printing var:" << var <<endl;}
 
 // special class template (template overload)
 template <>
